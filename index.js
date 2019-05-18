@@ -113,12 +113,26 @@ function emailAnonymizer() {
         resultEmail = emailValue;
     }
     if (emailValue.search('@') != -1) {
-        let length = emailValue.indexOf('@')-2;
-        let asterisk = '#';
-        for (let i = 1; i < length; i++) {
-            asterisk += '#';
+        if (emailValue.search('ipsum') != -1) {
+            resultEmail = emailValue;
+        } else {
+            let length = emailValue.indexOf('@')-2;
+            let asterisk = '#';
+
+            if (emailValue.search('Lorem') != -1) {
+                for (let i = 7; i < length; i++) {
+                    asterisk += '#';
+                }
+                resultEmail = substr_replace(emailValue, asterisk, 7, length-2);
+            } else {
+                for (let i = 1; i < length; i++) {
+                    asterisk += '#';
+                }
+                resultEmail = substr_replace(emailValue, asterisk, 1, length);
+            }
+            
         }
-        resultEmail = substr_replace(emailValue, asterisk, 1, length);
+
     }
     
 
