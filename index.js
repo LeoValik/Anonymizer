@@ -51,6 +51,12 @@ function phoneAnonymizer() {
     if (resultPhone == undefined) {
         resultPhone = phoneValue;
     }
+    //resultPhone = phoneValue.slice(0, -3).join('XXX');
+    if ((phoneValue.length == 15) || (phoneValue.length == 16)) 
+    {
+        resultPhone = phoneValue.replace(/.{3}$/,"XXX");
+    }
+    
     phoneResult.innerText = resultPhone; 
 }
 phoneBtn.onclick = phoneAnonymizer;
