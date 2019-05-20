@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Anonymizer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- data-main attribute tells require.js to load
+        scripts/main.js after require.js loads. -->
+    <script data-main="scripts/main" src="scripts/require.js"></script>
 </head>
 <body>
-    <!--<input type="text">
-    <button>Зашифровать</button>
-    <span id="result"></span>-->
 
     <!-- Skype usernames anonymizer -->
     <form action="#">
         <input type="text" id="skypeValue"/>
-        <input type="submit" id="skypeBtn" value="Зашифровать Skype" />
+        <input type="button" id="skypeBtn" value="Зашифровать Skype" />
         <span id="skypeResult"></span>
     </form>
     <br>
@@ -23,7 +23,7 @@
     <!-- Phone number anonymizer -->
     <form action="#">
         <input type="text" id="phoneValue"/>
-        <input type="submit" id="phoneBtn" value="Зашифровать номер телефона" />
+        <input type="button" id="phoneBtn" value="Зашифровать номер телефона" />
         <span id="phoneResult"></span>
     </form>
     <br>
@@ -31,10 +31,10 @@
     <!-- Email anonymizer -->
     <form action="#">
         <input type="text" id="emailValue"/>
-        <input type="submit" id="emailBtn" value="Зашифровать email" />
+        <input type="button" id="emailBtn" value="Зашифровать email" />
         <span id="emailResult"></span>
     </form>
 
-<script src="index.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
